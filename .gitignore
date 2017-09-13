@@ -1,0 +1,5 @@
+# ignore pdf referrals saved locally
+**/referrals
+
+# ignore uploaded files saved locally
+**/uploads
