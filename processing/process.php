@@ -2,6 +2,9 @@
 
 //date_default_timezone_set('America/Detroit');
 
+
+$docRoot = $_SERVER['DOCUMENT_ROOT'];
+
 require_once '../classes/PHPMailer/PHPMailerAutoload.php';
 require_once '../classes/tcpdf/tcpdf.php';
 
