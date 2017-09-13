@@ -1,6 +1,6 @@
 <?php
 
-date_default_timezone_set('America/Detroit');
+//date_default_timezone_set('America/Detroit');
 
 require_once '../classes/PHPMailer/PHPMailerAutoload.php';
 require_once '../classes/tcpdf/tcpdf.php';
@@ -9,12 +9,13 @@ require_once '../classes/tcpdf/tcpdf.php';
 foreach ($_POST as $var=>$val) $$var = $val;
 //echo '<pre>'; print_r($_POST); exit();
 
+
 switch ($submit) {
     case 'cbct':
-        include_once './process_cbct.php';
+        include_once 'process_cbct.php';
         break;
 	case 'omfs':
-		include_once './process_TCPDF_SCRATCH.php';
+		include_once 'process_TCPDF_SCRATCH.php';
 		break;
     default:
         echo 'There is a broken link in the referral process, please contact the University of Michigan School of Dentistry Help Desk at 763-3318.';
