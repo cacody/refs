@@ -10,8 +10,8 @@
 //$imageoutput_list = implode('<br>', $_POST['imageoutput']);
 
 $extractions_list = implode('<br>', $_POST['extractions']); // First-pass extractions array 
-$tooth_selection_upper_img = '<img src="images/oms/teeth1.png" style="width:300px;height:auto;">';
-$tooth_selection_lower_img = '<img src="images/oms/teeth2.png" style="width:300px;height:auto;">';
+$tooth_selection_upper_img = '<img src="../images/oms/teeth1.png" style="width:300px;height:auto;">';
+$tooth_selection_lower_img = '<img src="../images/oms/teeth2.png" style="width:300px;height:auto;">';
 $uploadType = $_POST['uploadType']; // Type of Panorex?, Bitewing?, etc.
 
 
@@ -123,7 +123,7 @@ $implant_results = 'process_implants';
 
 
 
-$pdffilepath = './referrals/';
+$pdffilepath = '../referrals/';
 $pdffilename = "omfs_$patientlastname" .
 	           "_$patientfirstname" . 
 	           "_" .date('Y-m-d-His').'.pdf';
@@ -132,8 +132,8 @@ $pdffilename = "omfs_$patientlastname" .
 
 // this is the dev upload method before we hid that form element
 // gonna keep it as a reference for now
-$upload_dir = "./uploads/";
-$url_upload_dir = '.uploads/';
+$upload_dir = "../uploads/";
+$url_upload_dir = '../uploads/';
 $supporting_doc_html = '';
 //if (is_uploaded_file( $_FILES["referralfile"]["tmp_name"]) ) {
 //	move_uploaded_file($_FILES["referralfile"]["tmp_name"], $upload_dir.$_FILES["referralfile"]["name"]);
@@ -262,8 +262,8 @@ class MYPDF extends TCPDF {
     //Page header
     public function Header() {
         // Logo
-		$image_file = K_PATH_IMAGES.'signature-marketing_whitebg_40.png';
-        $this->Image($image_file, PDF_MARGIN_LEFT, 10, 80, '', 'PNG', '', 'T', true, 300, '', false, false, 0, false, false, false);
+		//$image_file = K_PATH_IMAGES.'signature-marketing_whitebg_40.png';
+        //$this->Image($image_file, PDF_MARGIN_LEFT, 10, 80, '', 'PNG', '', 'T', true, 300, '', false, false, 0, false, false, false);
 		//Contact Info
 	$contact_text = '<h1>Oral and Maxillofacial Surgery</h1><b>Brent B Ward, DDS, MD</b> <br />
 	Section Head, Oral and Maxillofacial Surgery/Hospital Dentistry <br />
