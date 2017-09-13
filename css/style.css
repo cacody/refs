@@ -1,0 +1,145 @@
+
+/** 
+	The styling is focused on tablets and desktops because the target users  
+	are referring doctors and their office staff. It should still function well
+	on smaller mobile devices, but we're not prioritizing "mobile first"
+	for this particular product.
+**/
+
+/* Universal styles */
+.help-text {
+	font-style: italic;
+	color: #454545;
+	margin-bottom:15px;
+}
+
+.tab-pane {
+	/*display: none;  hide specialty form tabs by default */
+}
+
+label {
+	font-weight: normal;
+}
+
+
+/* Section Level Styling (Specialty Dept form styling further down) */
+
+legend {
+	text-transform: uppercase;
+	margin-bottom: 25px;
+}
+
+#cbct legend, #omfs legend {
+	font-weight: bold;
+	margin-bottom:25px;
+}
+
+section {
+	padding-top: 25px;
+	margin-bottom: 65px;
+}
+
+#provider {
+	background: #efefef;
+}
+
+#patient {
+	background: #dedede;
+}
+
+
+#department {
+	
+}
+
+/* CBCT custom form styles: form_dept_cbct.html */
+
+#cbct .radio input[type="radio"], 
+#cbct .radio-inline input[type="radio"], 
+#cbct .checkbox input[type="checkbox"], 
+#cbct .checkbox-inline input[type="checkbox"] {
+    margin-left: 0;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+/* OMFS custom form styles: form_dept_omfs.html */
+
+
+#omfs h1 {
+	background: #def;
+    padding: 15px;
+}
+
+#omfs legend {
+	text-transform: uppercase;
+	margin-bottom: 0;
+}
+
+#supporting-files,
+#extractions {
+	padding-left:25px;
+}
+
+#omfs #supporting-files-select {
+	margin: 30px 0 0 0;
+}
+
+#omfs #extractions #extraction-selections-upper img,
+#omfs #extractions #extraction-selections-lower img,
+#omfs #ortho-extractions #ortho-extraction-selections-upper img,
+#omfs #ortho-extractions #ortho-extraction-selections-lower img
+ {
+	width: 100%;
+	max-width: 550px;
+	padding: 5px 0;
+}
+
+#omfs #extraction-selections-upper .checkboxes-container {
+	padding-bottom: 15px;
+}
+
+#omfs .checkboxes-container {
+	max-width: 589px;
+	text-align: center;
+}
+
+#omfs .radio input[type="radio"], 
+#omfs .radio-inline input[type="radio"], 
+#omfs .checkbox input[type="checkbox"], 
+#omfs .checkbox-inline input[type="checkbox"] {
+    float: none;
+	margin-left: 0;
+}
+#omfs .radio-inline+.radio-inline, 
+#omfs .checkbox-inline+.checkbox-inline, 
+#omfs .checkbox-inline {
+    margin: 0 6px 0 0;
+	width: 11px;
+	padding: 0;
+	font-size: .9em;
+}
+
+
+
+#omfs .radio-inline, .checkbox-inline {
+	padding-left: 0;
+}
+
+
+
+#omfs [id^=conditional_inputs],
+#omfs [id^=ortho_conditional_inputs],
+#omfs [id^=implants_conditional_inputs],
+#omfs #approval_upload {
+	font-size: 12px;
+	padding-top: 15px;
+	padding-bottom: 10px;
+	background: #cde;
+	border: 1px solid #abc;
+}
+
+#omfs .selected-tooth-number {
+	font-size:20px;
+	font-weight: bold;
+}

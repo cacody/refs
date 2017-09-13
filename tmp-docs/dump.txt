@@ -1,0 +1,97 @@
+
+
+
+<div class="row">
+	<div class="col-md-3">
+		<label for="speciality_form">Select list (select one):</label>
+	</div>
+	<div class="col-md-9">
+		<div class="form-group">
+		
+		      <select class="form-control" id="specialty_form">
+				<option>- select one -</option>
+		        <option value="tab1" id="1">Cone-beam Computed Tomography (CBCT)</option>
+		        <option value="tab2" id="2">Endodontics</option>
+		        <option value="tab3" id="3">Oral and Maxillofacial Surgery</option>
+		        <option value="tab4" id="4">Patient Admitting and Emergency Services (PAES)</option>
+		      </select>
+		</div>
+	</div>
+</div>
+	
+<div class="tab-pane" id="tab1">
+    <?php include_once 'form_dept_cbct.html'; ?>
+</div> <!-- end tab1 -->
+
+<div class="tab-pane" id="tab2">
+    <?php include_once 'form_dept_endo.html'; ?>
+</div> <!-- end tab2 -->
+
+<div class="tab-pane" id="tab3">
+    <?php include_once 'form_dept_omfs.html'; ?>
+
+</div> <!-- end tab3 -->
+<div class="tab-pane" id="tab4">
+        <?php include_once 'form_dept_paes.html'; ?>
+
+
+
+
+
+
+// original basic file uploader mike created
+
+<!-- HIDING WHILE WORKING ON BOX UPLOAD METHOD
+<div class="well">
+<legend>Supporting Documentation</legend>
+  <div class="row">
+  <div class="col-xs-6">Upload any pictures or supporting documentation</div>
+  <div class="form-group col-xs-6">
+    <label class="btn btn-primary btn-block btn-file">
+    Upload files: <input type="file" id="referralFileUpload" name="referralfile" hidden>
+    </label>
+  </div>
+  </div>
+</div>
+-->
+
+
+
+
+
+
+// Extractions image that OMFS said they don't need
+
+	<div id="extractions-right-left" class="row text-center">
+			<div class="col-xs-1">
+				<label class="checkbox-inline right-left-selection">
+					<input id="right-extraction" type="checkbox" name="right-extraction" value="right">
+					<div>Right</div>
+				</label>
+			</div>
+			<div class="col-xs-5 col-md-3 col-lg-3">
+				<img src="images/oms/teeth3.jpg">
+			</div>
+			<div class="col-xs-2 col-md-1">
+				<label class="checkbox-inline right-left-selection">
+					<input id="left-extraction" type="checkbox" name="left-extraction" value="left">
+					<div>Left</div>
+				</label>
+			</div>
+	</div>
+	
+	#omfs label.right-left-selection {
+		min-height: 200px;
+		padding-top: 50px;
+	}
+
+	#omfs .checkbox-inline .right-left-selection {
+		width:21px;
+	}
+	
+	#omfs #extractions-right-left img {
+		width: 100%;
+	}
+	
+// end extractions extraction .. ha!
+
