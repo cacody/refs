@@ -18,7 +18,7 @@
 <section>	<!-- "Page Header"  -->
 	<div class="container">
 		<div class="page-header">
-		  <h1><img src="./images/signature-marketing_transparent_40.png" /></h1>
+		  <h1><img src="images/signature-marketing_transparent_40.png" /></h1>
 		</div>
 		<h2>Refferal Form</h2>
 	</div>

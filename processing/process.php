@@ -21,5 +21,6 @@ switch ($submit) {
 } //end switch
 
 echo $out_message;
+
 ?>
 
