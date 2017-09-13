@@ -1,6 +1,7 @@
 
 <?php
 
-echo $_SERVER['DOCUMENT_ROOT'];
+echo $_SERVER['DOCUMENT_ROOT'] . "<br>";
+echo getcwd();
 
 ?>
