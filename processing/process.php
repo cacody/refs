@@ -5,7 +5,7 @@
 
 $docRoot = $_SERVER['DOCUMENT_ROOT'];
 
-require_once '../classes/PHPMailer/PHPMailerAutoload.php';
+require_once '../classes/PHPMailer_5.2.1/class.phpmailer.php';
 require_once '../classes/tcpdf/tcpdf.php';
 
 //echo '<pre>'; print_r($_REQUEST); echo '</pre>';
