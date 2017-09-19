@@ -15,6 +15,15 @@ $tooth_selection_lower_img = '<img src="../images/oms/teeth2.png" style="width:3
 $uploadType = $_POST['uploadType']; // Type of Panorex?, Bitewing?, etc.
 
 
+//$alveoplasty_UR = $_POST['alveoplasty_upper_right']) . ' ';
+//$alveoplasty_UL = $_POST['alveoplasty_upper_left']) . ' ';
+//$alveoplasty_LL = $_POST['alveoplasty_Lower_left']) . ' ';
+//$alveoplasty_LR = $_POST['alveoplasty_lower_right']) . ' ' ;
+
+
+
+
+
 
 // EXTRACTIONS PROCESSING-----------------------------------------------------
 
@@ -39,10 +48,17 @@ function process_extractions() {
 	global $extractionData;
 	$result = '';
 	foreach($extractionData as $key=>$value) {
-		$result .= '#'.
-		$extractionData[$key]['tooth'] . 
-		'| Graft? ' . $extractionData[$key]['graft'] . 
-		'| Closure? ' . $extractionData[$key]['closure'] . '<br>';
+		$result .= "<tr>" .
+		'<td width="20%">#' . $extractionData[$key]['tooth'] . '</td>' . 
+		'<td>' . $extractionData[$key]['graft'] . '</td>' . 
+		'<td>' . $extractionData[$key]['closure'] . '</td>' . 
+		'</tr>';
+		
+		// old results layout - delete when new is ready
+		//$result .= '#'.
+		//$extractionData[$key]['tooth'] . 
+		//'| Graft? ' . $extractionData[$key]['graft'] . 
+		//'| Closure? ' . $extractionData[$key]['closure'] . '<br>';
 	}
 	return $result;
 }
@@ -147,7 +163,7 @@ $htmlout = <<<htmleoq
 	<tr>
 		<td>
 		
-			<h3>Referred By</h3>
+			<h3>REFERRING</h3>
 			<hr>
 			<p>
 				<strong>{$doctorfirstname} {$doctorlastname}</strong> (NPI: {$doctornpi})<br>
@@ -162,12 +178,43 @@ $htmlout = <<<htmleoq
 		</td>
 		<td>
 		
-			<h3>Patient</h3>
+			<h3>PATIENT</h3>
 			<hr>
 			<p>
 			<strong>{$patientfirstname} {$patientlastname}</strong><br>
-			DOB: {$dob}<br>
-			<strong>{$patientphone}</strong><br>
+
+					Gender: 
+					{$gender}<br>
+
+					Date of Birth: 
+					{$dob}<br>
+
+					Own Legal Guardian? 
+					{$legal_guardian}<br>
+
+					Street Address: 
+					{$pt_address} <br /> {$pt_city}, {$pt_state} {$pt_zipcode}<br>
+
+					Patient Phone: 
+					{$patientphone}<br>
+
+					Email: 
+					{$pt_email}<br>
+
+					Reason: 
+					{$reason}<br>
+
+					Medical Conditions: 
+					{$medical_conditions}<br>
+
+					Medications: 
+					{$medications}<br>
+
+					Dental Insurance: 
+					{$dental_insurance}<br>
+
+					Medical Insurance: 
+					{$medical_insurance}<br>
 			
 			</p>
 		</td>
@@ -175,46 +222,112 @@ $htmlout = <<<htmleoq
 </tbody>
 </table>
 
-
-	<hr>
+<table class="table" cellspacing="0" cellpadding="5" border="1">
+	<tbody>	
+		<tr>
+			<th>Type of Radiographs Uploaded</th>
+			<td>{$uploadType}</td>
+		</tr>
+	</tbody>
+</table>
 	
-
-
-
-
-<h4>Options</h4>
 <table class="table" cellspacing="0" cellpadding="5" border="1">
 <tbody>
-	<tr>
-		<th>Upload Type</th>
-		<td>{$uploadType}</td>
-	</tr>
 	<tr><td colspan="2" bgcolor="#0000FF" color="yellow"><strong>EXTRACTIONS</strong></td></tr>
 	<tr>
 		<td width="60%">{$tooth_selection_upper_img}<br>{$tooth_selection_lower_img}</td>
-	    <td width="40%">{$extraction_results()}</td>
+	    <td width="40%">
+			<table class="subtable">
+				<tbody>
+			
+				<tr>
+					<td width="20%"><strong>Tooth</strong></td>
+					<td><strong>Graft?</strong></td>
+					<td><strong>Anticipate Closure?</strong></td>
+				</tr>{$extraction_results()}
+				</tbody>
+			</table>
+		</td>
+		
 	</tr>
+	<tr>
+		<td>Requires Alveoplasty or Tori Removal?</td>
+		<td>{$full_extraction_alveoplasty}{$full_extraction_tori_removal}</td>
+	</tr>
+	<tr>
+		<td>Does Patient have Medicaid or Healthy MI insurance plan?</td>
+		<td>{$insurance_check}</td>
+	</tr>
+</tbody>
+</table>
+<br><br>
+<table class="table" cellspacing="0" cellpadding="5" border="1">
+<tbody>
+	<tr><td colspan="2" bgcolor="#0000FF" color="yellow"><strong>SURGICAL PROCEDURES</strong></td></tr>
+	<tr>
+		<td width="60%">Alveoplasty (quad)</td>
+		<td width="40%">
+			{$alveoplasty_upper_right} {$alveoplasty_upper_left} {$alveoplasty_Lower_left} {$alveoplasty_lower_right}
+		</td>
+	</tr>
+	<tr>
+		<td>Tory Removal</td>
+		<td>{$tory_removal_location}</td>
+	</tr>
+</tbody>
+</table>
+<br><br>
+<table class="table" cellspacing="0" cellpadding="5" border="1">
+<tbody>
+	<tr><td colspan="2" bgcolor="#0000FF" color="yellow"><strong>BIOPSY</strong></td></tr>
+	<tr>
+		<td width="60%">Tissue Type</td>
+		<td width="40%">{$biopsy_hard_tissue}{$biopsy_soft_tissue}</td>
+	</tr>
+	<tr>
+		<td>Area of the mouth</td>
+		<td>{$biopsy_area}</td>
+	</tr>
+	<tr>
+		<td>Description of Lesion</td>
+		<td>{$biopsy_lesion_description}</td>
+	</tr>
+</tbody>
+</table>
+<br pagebreak="true">
+
+<br><br>
+<table class="table" cellspacing="0" cellpadding="5" border="1">
+<tbody>
 	<tr><td colspan="2" bgcolor="#0000FF" color="yellow"><strong>ORTHO EXTRACTIONS</strong></td></tr>
 	<tr>
-		<td>{$tooth_selection_upper_img}<br>{$tooth_selection_lower_img}</td>
-	    <td><table class="subtable">
+		<td width="60%">{$tooth_selection_upper_img}<br>{$tooth_selection_lower_img}</td>
+	    <td width="40%">
+			<table class="subtable">
 				<tbody>
+				
 				<tr>
-					<td width="20%">Tooth</td>
-					<td>Exposure</td>
-					<td>Technique</td>
+					<td width="20%"><strong>Tooth</strong></td>
+					<td><strong>Exposure</strong></td>
+					<td><strong>Technique</strong></td>
 				</tr>{$ortho_results()}
 				</tbody>
 			</table>
 		</td>
 	</tr>
+</tbody>
+</table>
+<br><br>
+<table class="table" cellspacing="0" cellpadding="5" border="1">
+<tbody>	
 	<tr><td colspan="2" bgcolor="#0000FF" color="yellow"><strong>IMPLANTS</strong></td></tr>
 	<tr>
-		<td>{$tooth_selection_upper_img}<br>{$tooth_selection_lower_img}</td>
-	    <td>{$implant_results()}</td>
+		<td width="60%">{$tooth_selection_upper_img}<br>{$tooth_selection_lower_img}</td>
+	    <td width="40%">{$implant_results()}</td>
 	</tr>
 </tbody>
 </table>
+
 
 
 <style>
@@ -225,7 +338,7 @@ $htmlout = <<<htmleoq
 }
 .table {
   /*width: 100%;*/
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 .table thead > tr > th,
 .table tbody > tr > th,

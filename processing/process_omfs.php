@@ -70,13 +70,51 @@ $htmlout = <<<htmleoq
 		<td>{$patientfirstname} {$patientlastname}</td>
 	</tr>
 	<tr>
-		<th>Patient Phone</th>
-		<td>{$patientphone}</td>
+		<th>Date of Birth</th>
+		<td>{$gender}</td>
 	</tr>
 	<tr>
 		<th>Date of Birth</th>
 		<td>{$dob}</td>
 	</tr>
+	<tr>
+		<th>Own Legal Guardian?</th>
+		<td>{$legal_guardian}</td>
+	</tr>
+	<tr>
+		<th>Street Address</th>
+		<td>{$pt_address} <br /> {$pt_city}, {$pt_state} {$pt_zipcode}</td>
+	</tr>
+	<tr>
+		<th>Patient Phone</th>
+		<td>{$patientphone}</td>
+	</tr>
+	<tr>
+		<th>Email</th>
+		<td>{$pt_email}</td>
+	</tr>
+	<tr>
+		<th>Reason</th>
+		<td>{$reason}</td>
+	</tr>
+	<tr>
+		<th>Medical Conditions</th>
+		<td>{$medical_conditions}</td>
+	</tr>
+	<tr>
+		<th>Medications</th>
+		<td>{$medications}</td>
+	</tr>
+	<tr>
+		<th>Dental Insurance</th>
+		<td>{$dental_insurance}</td>
+	</tr>
+	<tr>
+		<th>Medical Insurance</th>
+		<td>{$medical_insurance}</td>
+	</tr>
+	
+	
 </tbody>
 </table>
 
