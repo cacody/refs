@@ -349,7 +349,7 @@ $mail->addAttachment($pdffilepath.$pdffilename);
 if (!$mail->send()) {
     echo "Mailer Error: " . $mail->ErrorInfo;
 } else {
-    echo "Message sent!";
+    echo "Message sent, yo!";
 }
 
 
