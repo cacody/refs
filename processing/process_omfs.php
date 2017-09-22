@@ -16,9 +16,9 @@ $extractions_list = implode('<br>', $_POST['extractions']);
 
 // this is the dev upload method before we hid that form element
 // gonna keep it as a reference for now
-$upload_dir = "/Users/cacody-admin/Development/referrals-dev/upload/";
-$url_upload_dir = '/Users/cacody-admin/Development/referrals-dev/upload/';
-$supporting_doc_html = '';
+$upload_dir = "/usr/local/apache/referrals/htdocs/referrals/demos/refs-build1/uploads";
+//$url_upload_dir = '/Users/cacody-admin/Development/referrals-dev/upload/';
+//$supporting_doc_html = '';
 //if (is_uploaded_file( $_FILES["referralfile"]["tmp_name"]) ) {
 //	move_uploaded_file($_FILES["referralfile"]["tmp_name"], $upload_dir.$_FILES["referralfile"]["name"]);
 //	$supporting_doc_html = '<a href="'.$url_upload_dir.$_FILES["referralfile"]["name"].'">Supporting File</a>';
@@ -197,9 +197,9 @@ class MYPDF extends TCPDF {
     }
 }
 /*  ----- This is for dev, uncomment lines below for prod ------- */
-$pdffilepath = '/Users/cacody-admin/Development/referrals-dev/referrals/';
+$pdffilepath = '/usr/local/apache/referrals/htdocs/referrals/demos/refs-build1/referrals/';
 $pdffilename = 'omfs_'.date('YmdHis').'.pdf';
-$email_path = 'https://referrals-dev/referrals/'.$pdffilename;
+//$email_path = 'https://referrals-dev/referrals/'.$pdffilename;
 /*
 $pdffilepath = '/www/mitools/assets/referrals/cbct/';
 $pdffilename = 'cbct_'.date('YmdHis').'.pdf';
