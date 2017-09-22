@@ -139,18 +139,12 @@ $implant_results = 'process_implants';
 
 
 
-$pdffilepath = '../referrals/';
+$pdffilepath = getcwd()."/referrals/";
 $pdffilename = "omfs_$patientlastname" .
 	           "_$patientfirstname" . 
 	           "_" .date('Y-m-d-His').'.pdf';
-//$email_path = 'https://referrals-dev/referrals/'.$pdffilename;
+$upload_dir = getcwd()."/uploads/";
 
-
-// this is the dev upload method before we hid that form element
-// gonna keep it as a reference for now
-$upload_dir = "../uploads/";
-$url_upload_dir = '../uploads/';
-$supporting_doc_html = '';
 //if (is_uploaded_file( $_FILES["referralfile"]["tmp_name"]) ) {
 //	move_uploaded_file($_FILES["referralfile"]["tmp_name"], $upload_dir.$_FILES["referralfile"]["name"]);
 //	$supporting_doc_html = '<a href="'.$url_upload_dir.$_FILES["referralfile"]["name"].'">Supporting File</a>';
